@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="S6p-H8-jyS" customClass="EventCellTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S6p-H8-jyS" id="PL1-dV-scB">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSG-G5-Rgq">
+                        <rect key="frame" x="12" y="13" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="N4l-Tr-QRR"/>
+                            <constraint firstAttribute="width" constant="45" id="bTm-qD-Jqq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="206" placeholderIntrinsicHeight="16" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="206" translatesAutoresizingMaskIntoConstraints="NO" id="5ax-WP-DGT">
+                        <rect key="frame" x="69" y="11" width="206" height="16"/>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yV-Xt-eek">
+                        <rect key="frame" x="283" y="14" width="25" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="D4S-L1-WOs"/>
+                            <constraint firstAttribute="height" constant="16" id="lKD-8m-zmf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oIz-Ee-75V">
+                        <rect key="frame" x="0.0" y="68" width="320" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="O4n-TM-sas"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="239" placeholderIntrinsicHeight="24" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="239" translatesAutoresizingMaskIntoConstraints="NO" id="s8y-WB-REh">
+                        <rect key="frame" x="69" y="28" width="239" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="s8y-WB-REh" secondAttribute="bottom" constant="3" id="9ES-dI-jp0"/>
+                    <constraint firstItem="s8y-WB-REh" firstAttribute="top" secondItem="5ax-WP-DGT" secondAttribute="bottom" constant="1" id="9py-R5-ODR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="s8y-WB-REh" secondAttribute="trailing" constant="4" id="BfL-ha-laX"/>
+                    <constraint firstItem="s8y-WB-REh" firstAttribute="leading" secondItem="hSG-G5-Rgq" secondAttribute="trailing" constant="12" id="JoO-es-0i0"/>
+                    <constraint firstItem="9yV-Xt-eek" firstAttribute="leading" secondItem="5ax-WP-DGT" secondAttribute="trailing" constant="8" id="OCN-rR-lqX"/>
+                    <constraint firstItem="5ax-WP-DGT" firstAttribute="top" secondItem="PL1-dV-scB" secondAttribute="topMargin" constant="3" id="RUF-kD-Hl8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oIz-Ee-75V" secondAttribute="trailing" constant="-8" id="SDb-NC-qDI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9yV-Xt-eek" secondAttribute="trailing" constant="4" id="ZcF-WF-8os"/>
+                    <constraint firstItem="oIz-Ee-75V" firstAttribute="leading" secondItem="PL1-dV-scB" secondAttribute="leadingMargin" constant="-8" id="jUG-jg-1AQ"/>
+                    <constraint firstItem="9yV-Xt-eek" firstAttribute="top" secondItem="PL1-dV-scB" secondAttribute="topMargin" constant="6" id="omz-4q-m1K"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="oIz-Ee-75V" secondAttribute="bottom" constant="-8" id="rqK-wt-obQ"/>
+                    <constraint firstItem="hSG-G5-Rgq" firstAttribute="top" secondItem="PL1-dV-scB" secondAttribute="topMargin" constant="5" id="sEq-Ni-E0w"/>
+                    <constraint firstItem="hSG-G5-Rgq" firstAttribute="leading" secondItem="PL1-dV-scB" secondAttribute="leadingMargin" constant="4" id="yDW-MP-lsi"/>
+                    <constraint firstItem="5ax-WP-DGT" firstAttribute="leading" secondItem="hSG-G5-Rgq" secondAttribute="trailing" constant="12" id="zca-Xd-7Di"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="descLbl" destination="s8y-WB-REh" id="QxZ-gh-RQQ"/>
+                <outlet property="eventImageView" destination="hSG-G5-Rgq" id="gxy-If-XN7"/>
+                <outlet property="titleLbl" destination="5ax-WP-DGT" id="scH-Sf-Gbl"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="174"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

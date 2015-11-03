@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "LauncherImageViewController.h"
+#import "EventsViewController.h"
+#import "HelperUtility.h"
+#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -15,31 +19,137 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
     // Override point for customization after application launch.
+    //Create Window..
+    self.window =[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+    
+    if (launchOptions != nil)
+    {
+        NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (dictionary != nil)
+        {
+            NSLog(@"Launched from push notification: %@", dictionary);
+            [self updateUIForReceivedNotification:dictionary updateUI:YES];
+        }
+    }
+    else
+    {
+        
+        
+        if ([application respondsToSelector:@selector(isRegisteredForRemoteNotifications)])
+        {
+            // iOS 8 Notifications
+            [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+            
+            [application registerForRemoteNotifications];
+        }
+        else
+        {
+            // iOS < 8 Notifications
+            [application registerForRemoteNotificationTypes:
+             (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
+        }
+        
+        
+        LauncherImageViewController* launchImageVC = [[LauncherImageViewController alloc] init];
+        self.navigationViewController = [[UINavigationController alloc] initWithRootViewController:launchImageVC];
+        self.navigationViewController.navigationItem.title = @"";
+        self.navigationViewController.navigationBar.tintColor = [UIColor whiteColor];
+        self.window.rootViewController = self.navigationViewController;
+    }
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+#pragma APN Methods
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"My token is: %@", deviceToken);
+    NSString * token = [NSString stringWithFormat:@"%@", deviceToken];
+    //Format token as you need:
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
+    token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@?token=%@",UPGRADE_URL,token];
+    
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
+    
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    NSData *urlData;
+    NSURLResponse *response;
+    urlData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:nil];
+    
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
+{
+    NSLog(@"Received notification: %@", userInfo);
+    [self updateUIForReceivedNotification:userInfo updateUI:NO];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+- (void)updateUIForReceivedNotification:(NSDictionary*)userInfo updateUI:(BOOL)updateUI
+{
+    if(updateUI)
+    {
+        NSString *alertValue = [[userInfo valueForKey:@"aps"] valueForKey:@"alert"];
+        NSLog(@"alertValue = [%@]",alertValue);
+        
+        if([alertValue isEqualToString:@"Hindi Event"])
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:HINDI_LANGUAGE forKey:CURRENT_LANGUAGE];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            [HelperUtility setLanguage:HINDI_LANGUAGE];
+        }
+        else
+        {
+            [[NSUserDefaults standardUserDefaults] setObject:ENGLISH_LANGUAGE forKey:CURRENT_LANGUAGE];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            [HelperUtility setLanguage:ENGLISH_LANGUAGE];
+        }
+        
+        EventsViewController* eventVC = [[EventsViewController alloc] init];
+        self.navigationViewController = [[UINavigationController alloc] initWithRootViewController:eventVC];
+        self.navigationViewController.navigationItem.title = @"";
+        self.navigationViewController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+        
+        self.navigationViewController.navigationItem.hidesBackButton=YES;
+        [self.navigationViewController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar"] forBarMetrics:(UIBarMetricsDefault)];
+        self.window.rootViewController = self.navigationViewController;
+    }
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+    
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
 }
 
 @end
