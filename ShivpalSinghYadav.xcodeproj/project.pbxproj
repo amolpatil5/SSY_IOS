@@ -64,6 +64,7 @@
 		433C72CF1BF215D800CD2EBA /* ImageItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 433C72CE1BF215D800CD2EBA /* ImageItemModel.m */; };
 		434196A11BE139600081A56A /* OngoingProjectsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4341969F1BE139600081A56A /* OngoingProjectsDetailsViewController.m */; };
 		434196A21BE139600081A56A /* OngoingProjectsDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434196A01BE139600081A56A /* OngoingProjectsDetailsViewController.xib */; };
+		437243591C07A2FD009C9997 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 437243581C07A2FD009C9997 /* SDWebImage.framework */; };
 		4382C4E61BA4ACDC00867723 /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4382C4E51BA4ACDC00867723 /* VIPhotoView.m */; };
 		4382C4EA1BA4AD0800867723 /* ImageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4382C4E81BA4AD0800867723 /* ImageDetailsViewController.m */; };
 		4382C4EB1BA4AD0800867723 /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4382C4E91BA4AD0800867723 /* ImageDetailsViewController.xib */; };
@@ -106,7 +107,6 @@
 		43C3AE061AF3EF0C000413DB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C3AE011AF3EF0C000413DB /* HomeViewController.xib */; };
 		43C3AE071AF3EF0C000413DB /* TileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C3AE031AF3EF0C000413DB /* TileCell.m */; };
 		43C3AE081AF3EF0C000413DB /* TileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C3AE041AF3EF0C000413DB /* TileCell.xib */; };
-		43C3AE0A1AF40546000413DB /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C3AE091AF40546000413DB /* SDWebImage.framework */; };
 		43C44B451AF14AAE000220A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 43C44B441AF14AAE000220A8 /* Default.png */; };
 		43C7F0B21AF2B20D00D08E52 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C7F0B11AF2B20D00D08E52 /* ImageIO.framework */; };
 		43C91FCD1AEC30E50047F2A9 /* ConstituencyCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C91FCB1AEC30E50047F2A9 /* ConstituencyCellTableViewCell.m */; };
@@ -192,6 +192,7 @@
 		4341969E1BE1395F0081A56A /* OngoingProjectsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OngoingProjectsDetailsViewController.h; sourceTree = "<group>"; };
 		4341969F1BE139600081A56A /* OngoingProjectsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OngoingProjectsDetailsViewController.m; sourceTree = "<group>"; };
 		434196A01BE139600081A56A /* OngoingProjectsDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OngoingProjectsDetailsViewController.xib; sourceTree = "<group>"; };
+		437243581C07A2FD009C9997 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		4382C4E41BA4ACDC00867723 /* VIPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPhotoView.h; sourceTree = "<group>"; };
 		4382C4E51BA4ACDC00867723 /* VIPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPhotoView.m; sourceTree = "<group>"; };
 		4382C4E71BA4AD0800867723 /* ImageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailsViewController.h; sourceTree = "<group>"; };
@@ -262,7 +263,6 @@
 		43C3AE021AF3EF0C000413DB /* TileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileCell.h; sourceTree = "<group>"; };
 		43C3AE031AF3EF0C000413DB /* TileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileCell.m; sourceTree = "<group>"; };
 		43C3AE041AF3EF0C000413DB /* TileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TileCell.xib; sourceTree = "<group>"; };
-		43C3AE091AF40546000413DB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = ../../../Downloads/SDWebImage.framework; sourceTree = "<group>"; };
 		43C44B441AF14AAE000220A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		43C7F0B11AF2B20D00D08E52 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		43C91FCA1AEC30E50047F2A9 /* ConstituencyCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstituencyCellTableViewCell.h; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43C3AE0A1AF40546000413DB /* SDWebImage.framework in Frameworks */,
+				437243591C07A2FD009C9997 /* SDWebImage.framework in Frameworks */,
 				43C7F0B21AF2B20D00D08E52 /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +419,7 @@
 		438DA5BF1AD308C2005BFC86 = {
 			isa = PBXGroup;
 			children = (
-				43C3AE091AF40546000413DB /* SDWebImage.framework */,
+				437243581C07A2FD009C9997 /* SDWebImage.framework */,
 				43C7F0B11AF2B20D00D08E52 /* ImageIO.framework */,
 				438DA5CA1AD308C2005BFC86 /* ShivpalSinghYadav */,
 				438DA5E41AD308C2005BFC86 /* ShivpalSinghYadavTests */,
@@ -997,6 +997,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ShivpalSinghYadav",
 					/Users/amolpatil/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ShivpalSinghYadav/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1022,6 +1023,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ShivpalSinghYadav",
 					/Users/amolpatil/Downloads,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ShivpalSinghYadav/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
