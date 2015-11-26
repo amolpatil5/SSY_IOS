@@ -10,7 +10,7 @@
 #import "LocalizationConstant.h"
 #import "Constants.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "EventsDatamodel.h"
+#import "ImageItemModel.h"
 
 #import "TileCell.h"
 #import "AppDelegate.h"
@@ -36,7 +36,7 @@
     self.title = IMAGE_GALLARY;
     [self.carousel reloadData];
     self.imageDataArray = [[NSMutableArray alloc]init];
-    NSURL *restURL = [NSURL URLWithString:GET_EVENTS_DATA_URL];
+    NSURL *restURL = [NSURL URLWithString:IMAGE_GALLARY_URL];
     NSURLRequest *restRequest = [NSURLRequest requestWithURL:restURL];
     if( currentConnection)
     {
@@ -98,8 +98,8 @@
     {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
       
-         EventsDatamodel *event = [self.imageDataArray objectAtIndex:index];
-        [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:event.image]
+         ImageItemModel *imageModel = [self.imageDataArray objectAtIndex:index];
+        [((UIImageView *)view) setImageWithURL:[NSURL URLWithString:imageModel.image]
                             placeholderImage:[UIImage imageNamed:@"partylogo"]];
 //
 //        view.contentMode = UIViewContentModeCenter;
@@ -256,11 +256,11 @@
     else
     {
         [self.imageDataArray removeAllObjects];
-        NSArray *eventsArray = [jsonDict valueForKey:@"events"];
-        for (NSDictionary *dict in eventsArray)
+        NSArray *imagessArray = [jsonDict valueForKey:@"images"];
+        for (NSDictionary *dict in imagessArray)
         {
-            EventsDatamodel *event = [[EventsDatamodel alloc]initWithDict:dict];
-            [self.imageDataArray addObject:event];
+            ImageItemModel *imageItem = [[ImageItemModel alloc]initWithDict:dict];
+            [self.imageDataArray addObject:imageItem];
         }
         if([self.imageDataArray count]>0)
         {
@@ -284,7 +284,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-      EventsDatamodel *event = [self.imageDataArray objectAtIndex:indexPath.item];
+      ImageItemModel *imageItem = [self.imageDataArray objectAtIndex:indexPath.item];
 //    
 //    TileCell *tcell = (TileCell *)[self.maincollectionView dequeueReusableCellWithReuseIdentifier:TILE_IDENTIFIER forIndexPath:indexPath];
 //    tcell.backgroundColor = [UIColor orangeColor];
@@ -293,19 +293,18 @@
 //
 //     return cell;
     
-    
-    
     UICollectionViewCell *cell = [self.maincollectionView dequeueReusableCellWithReuseIdentifier:TILE_IDENTIFIER forIndexPath:indexPath];
+    
     [cell setBackgroundColor:[UIColor blackColor]];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
     
     
     [cell.contentView addSubview:imageView];
 //    cell.contentView.layer.shadowColor = [UIColor whiteColor].CGColor;
 //    cell.contentView.layer.shadowRadius = 2.0;
 //    
-    [imageView setImageWithURL:[NSURL URLWithString:event.image]
+    [imageView setImageWithURL:[NSURL URLWithString:imageItem.image]
                           placeholderImage:[UIImage imageNamed:@"partylogo"]];
     
     return cell;
@@ -313,13 +312,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-    EventsDatamodel *event = [self.imageDataArray objectAtIndex:indexPath.item];
+    ImageItemModel *imageItem = [self.imageDataArray objectAtIndex:indexPath.item];
 
-    if(event && [event.image length] >0)
+    if(imageItem && [imageItem.image length] >0)
     {
          ImageDetailsViewController *imgDetailsVC = [[ImageDetailsViewController alloc]init];
     
-    imgDetailsVC.imageURLString =event.image;
+       imgDetailsVC.imageURLString =imageItem.image;
         imgDetailsVC.imageDataArray = [self.imageDataArray mutableCopy];
         imgDetailsVC.selectedIndex = (int)indexPath.item;
         

@@ -27,8 +27,16 @@
     [self.titleLbl setText:eventModel.title];
 //    [self.descLbl setText:eventModel.desc];
     [self.descLbl setText:[self convertHtmlPlainText:eventModel.desc]];
-    [self.eventImageView setImageWithURL:[NSURL URLWithString:eventModel.image]
-                        placeholderImage:[UIImage imageNamed:@"head_banner"]];
+    
+    if(eventModel.image_name.length >2)
+    {
+        [self.eventImageView setImage:[UIImage imageNamed:eventModel.image_name]];
+    }
+    else{
+        [self.eventImageView setImageWithURL:[NSURL URLWithString:eventModel.image]
+                            placeholderImage:[UIImage imageNamed:@"head_banner"]];
+    }
+   
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

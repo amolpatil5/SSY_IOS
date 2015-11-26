@@ -10,7 +10,8 @@
 #import "VIPhotoView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "LocalizationConstant.h"
-#import "EventsDatamodel.h"
+
+#import "ImageItemModel.h"
 #import "LocalizationConstant.h"
 #import "Constants.h"
 
@@ -26,6 +27,7 @@
     [super viewDidLoad];
     self.title = IMAGE_GALLARY;
     [self.mainScrollView setDelegate:self];
+    [self.mainScrollView setFrame:CGRectMake(self.mainScrollView.frame.origin.x, self.mainScrollView.frame.origin.x, [UIScreen mainScreen].bounds.size.width, self.mainScrollView.frame.size.height)];
     [self addImagesToScrollView];
 }
 
@@ -41,17 +43,23 @@
     self.pageControl.numberOfPages = [self.imageDataArray count];
     for ( int i = 0; i < self.pageControl.numberOfPages; i++)
     {
-        EventsDatamodel *imageDataModel = (EventsDatamodel *)[self.imageDataArray objectAtIndex:i];
+        ImageItemModel *imageDataModel = (ImageItemModel *)[self.imageDataArray objectAtIndex:i];
         
         CGRect frame;
         frame.origin.x = self.mainScrollView.frame.size.width * i;
         frame.origin.y = 0;
+
         frame.size = self.mainScrollView.frame.size;
         
         UIImageView *imageView  = [[UIImageView alloc]init];
+        if([imageDataModel.image_name length]>2)
+        {
+            [imageView setImage:[UIImage imageNamed:imageDataModel.image_name]];
+        }
+        else{
         [imageView setImageWithURL:[NSURL URLWithString:imageDataModel.image]
                   placeholderImage:[UIImage imageNamed:@"head_banner"]];
-        
+        }
         VIPhotoView *photoView = [[VIPhotoView alloc] initWithFrame:frame andImage:imageView.image];
         photoView.autoresizingMask = (1 << 6) -1;
         [self.mainScrollView addSubview:photoView];

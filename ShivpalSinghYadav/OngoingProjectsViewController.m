@@ -30,6 +30,9 @@ static NSString *CellIdentifier = @"Event_Cell";
     [self setTitle:ONGOING_PROJECTS];
     self.eventsDataArray = [[NSMutableArray alloc]init];
     
+    //Following code needs to be uncommented for serviceCall to get Project Details online
+    //For Now hardcoding data for projects
+ /*
     NSURL *restURL = [NSURL URLWithString:GET_EVENTS_DATA_URL];
     NSURLRequest *restRequest = [NSURLRequest requestWithURL:restURL];
     if( currentConnection)
@@ -41,7 +44,45 @@ static NSString *CellIdentifier = @"Event_Cell";
     currentConnection = [[NSURLConnection alloc] initWithRequest:restRequest delegate:self];
     [self.spinner startAnimating];
     // If the connection was successful, create the XML that will be returned.
-    self.apiReturnData = [NSMutableData data];
+    self.apiReturnData = [NSMutableData data]; */
+    
+    
+    
+    [self.spinner stopAnimating];
+    NSMutableDictionary *eventDict = [[NSMutableDictionary alloc]init];
+     [eventDict setValue:@"saryu_1" forKey:@"image_name"];
+     [eventDict setValue:title_Sarayu_canal_project forKey:@"title"];
+     [eventDict setValue:Short_Description_Sarayu_canal_project forKey:@"desc"];
+     [eventDict setValue:Long_Description_Sarayu_canal_project forKey:@"details"];
+    
+    EventsDatamodel *event1 = [[EventsDatamodel alloc]initWithDict:eventDict];
+    [self.eventsDataArray addObject:event1];
+    
+    [eventDict setValue:@"badsagar_1" forKey:@"image_name"];
+    [eventDict setValue:title_Bansagar_canal_project forKey:@"title"];
+    [eventDict setValue:Short_Description_Bansagar_canal_project forKey:@"desc"];
+    [eventDict setValue:Long_Description_Bansagar_canal_project forKey:@"details"];
+    
+    EventsDatamodel *event2 = [[EventsDatamodel alloc]initWithDict:eventDict];
+    [self.eventsDataArray addObject:event2];
+
+    
+    [eventDict setValue:@"bundelkhand_1" forKey:@"image_name"];
+    [eventDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+    [eventDict setValue:Short_Description_Bundelkhand_Irrigation_project forKey:@"desc"];
+    [eventDict setValue:Long_Description_Bundelkhand_Irrigation_project forKey:@"details"];
+    
+    EventsDatamodel *event3 = [[EventsDatamodel alloc]initWithDict:eventDict];
+    [self.eventsDataArray addObject:event3];
+    
+    
+    if([self.eventsDataArray count]>0)
+    {
+        [self.mainTableView setHidden:NO];
+        [self.mainTableView reloadData];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,6 +159,9 @@ static NSString *CellIdentifier = @"Event_Cell";
     OngoingProjectsDetailsViewController *objOngoingProjectsDetailsViewController = [[OngoingProjectsDetailsViewController alloc]init];
     objOngoingProjectsDetailsViewController.projTitle = event.title;
     objOngoingProjectsDetailsViewController.projDesc = [NSString stringWithFormat:@"%@ \n %@",event.desc,event.details];
+    
+    
+    
     
     [self.navigationController pushViewController:objOngoingProjectsDetailsViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];

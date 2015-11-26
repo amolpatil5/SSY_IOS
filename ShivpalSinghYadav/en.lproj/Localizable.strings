@@ -5,7 +5,7 @@
 "Events" = "News Room";
 "Contact" = "Contact";
 "IMAGE_GALLARY" = "Prints";
-"ONGOING_PROJECTS" ="Ongoing project";
+"ONGOING_PROJECTS" ="Projects";
 
 "FACEBOOK_TITLE" = "Facebook";
 "GOOGLE_PLUS_TITLE" = "Google Plus";
@@ -69,3 +69,23 @@
 "Vidhan_Sabha_Booth_Name" = "Part Name";
 "IN_MEDIA_URL" = "http://dummy-class.herokuapp.com/media";
 "GET_EVENTS_DATA_URL" = "https://dummy-class.herokuapp.com/events_list_trial";
+
+
+
+"title_Sarayu_canal_project" = "Sarayu canal project";
+"Short_Description_Sarayu_canal_project"=  "The project 9 respectively Bahraich district, Shravasti, Balrampur, Gonda, Siddharth, Basti, Sant Kabir Nagar, Gorakhpur and Maharajganj are benefiting.";
+"Long_Description_Sarayu_canal_project"=  "2844 crore was incurred in 32 years then, but the canals are gaps 1400 and 125 km long canal in Rapti an inch due to the digging of irrigation to farmers found no benefit. After only 2 years of socialist government declared a national project by delivering the project by spending Rs 1234 crore by 1000 and 103 km main canal and 150 km gaps Full Rjwahe / Alpikaon digging irrigation capacity was increased 63,000 hectares. ";
+
+
+"title_Bansagar_canal_project"=  "Bansagar canal project";
+"Short_Description_Bansagar_canal_project"=  "The project will benefit the farmers of 2 districts of Allahabad and Mirzapur.";
+"Long_Description_Bansagar_canal_project"=  "456 crore after the Socialist government spending 0 to 93 percent complete and has been made and it has 50 thousand hectares irrigated farmers.";
+
+"title_Bundelkhand_Irrigation_project"=  "Bundelkhand Irrigation projects of region ";
+"Short_Description_Bundelkhand_Irrigation_project"=  "The present Government undertook to complete unfinished projects of Bundelkhand and provided Rs 1862 in the last 3 years, from the current government in the 13 unfinished irrigation projects, four projects have been completed and the remaining nine projects done in the next two years will be completed. ";
+"Long_Description_Bundelkhand_Irrigation_project"=  "  ";
+
+
+
+
+

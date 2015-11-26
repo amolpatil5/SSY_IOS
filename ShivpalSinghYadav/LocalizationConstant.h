@@ -72,6 +72,19 @@
 #define IN_MEDIA_URL AMPLocalizedString(@"IN_MEDIA_URL",nil)
 #define GET_EVENTS_DATA_URL AMPLocalizedString(@"GET_EVENTS_DATA_URL",nil)
 
+#define title_Sarayu_canal_project AMPLocalizedString(@"title_Sarayu_canal_project",nil)
+#define Short_Description_Sarayu_canal_project AMPLocalizedString(@"Short_Description_Sarayu_canal_project",nil)
+#define Long_Description_Sarayu_canal_project AMPLocalizedString(@"Long_Description_Sarayu_canal_project",nil)
+
+#define title_Bansagar_canal_project AMPLocalizedString(@"title_Bansagar_canal_project",nil)
+#define Short_Description_Bansagar_canal_project AMPLocalizedString(@"Short_Description_Bansagar_canal_project",nil)
+#define Long_Description_Bansagar_canal_project AMPLocalizedString(@"Long_Description_Bansagar_canal_project",nil)
+
+#define title_Bundelkhand_Irrigation_project AMPLocalizedString(@"title_Bundelkhand_Irrigation_project",nil)
+#define Short_Description_Bundelkhand_Irrigation_project AMPLocalizedString(@"Short_Description_Bundelkhand_Irrigation_project",nil)
+#define Long_Description_Bundelkhand_Irrigation_project AMPLocalizedString(@"Long_Description_Bundelkhand_Irrigation_project",nil)
+
+
 
 
 #endif

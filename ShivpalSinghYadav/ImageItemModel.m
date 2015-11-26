@@ -1,20 +1,18 @@
 //
-//  EventsDatamodel.m
+//  ImageItemModel.m
 //  ShivpalSinghYadav
 //
-//  Created by Amol Patil on 10/04/15.
+//  Created by Amol Patil on 10/11/15.
 //  Copyright (c) 2015 Amol Patil. All rights reserved.
 //
 
-#import "EventsDatamodel.h"
+#import "ImageItemModel.h"
 
-@implementation EventsDatamodel
+@implementation ImageItemModel
 
+@synthesize image_name;
 @synthesize image;
 @synthesize title;
-@synthesize desc;
-@synthesize details;
-@synthesize image_name;
 
 -(id)initWithDict:(NSDictionary*)dict
 {
@@ -25,20 +23,10 @@
             self.image = [dict valueForKey:@"image"];
             self.image_name = [dict valueForKey:@"image_name"];
             self.title = [dict valueForKey:@"title"];
-            self.desc= [dict valueForKey:@"desc"];
-            self.details=[dict valueForKey:@"details"];
-
-            
-//            self.desc= [self convertHtmlPlainText:[dict valueForKey:@"desc"]];
-//            self.details= [self convertHtmlPlainText:[dict valueForKey:@"details"]];
         }
     }
     return self;
 }
-
-
-
-
 
 
 @end

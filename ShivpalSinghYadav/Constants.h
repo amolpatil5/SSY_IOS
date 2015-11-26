@@ -10,7 +10,6 @@
 
 #ifndef ShivpalSinghYadav_Constants_h
 #define ShivpalSinghYadav_Constants_h
-
 #define NSLog(x,...)
 
 #define HINDI_LANGUAGE @"hi-IN"
@@ -29,6 +28,9 @@
 #define KEY_DEPT_COLOR @"DepartmentColor"
 
 #define UPGRADE_URL @"https://dummy-class.herokuapp.com/upgrade"
+
+
+#define IMAGE_GALLARY_URL @"https://dummy-class.herokuapp.com/get_images_for_mobile"
 
 
 #define     AMPLocalizedString(text,table)                     [HelperUtility getText:text errorText:@"Not Found!!" tableName:table]

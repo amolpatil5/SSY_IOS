@@ -10,7 +10,7 @@
 #import "LocalizationConstant.h"
 #import "Constants.h"
 #import "BioDataTableViewCell.h"
-#import "EventsDatamodel.h"
+#import "ImageItemModel.h"
 #import "ImageDetailsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -51,6 +51,108 @@ static NSString *CellIdentifier = @"Bio_Cell";
     self.maincollectionView.bounces = YES;
     [self.maincollectionView setShowsHorizontalScrollIndicator:NO];
     [self.maincollectionView setShowsVerticalScrollIndicator:NO];
+    
+    if([self.projTitle isEqualToString:title_Sarayu_canal_project])
+    {
+        NSMutableDictionary *paramDict = [[NSMutableDictionary alloc] init];
+        [paramDict setValue:@"saryu_1" forKey:@"image_name"];
+        [paramDict setValue:title_Sarayu_canal_project forKey:@"title"];
+        ImageItemModel *item1 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item1];
+        
+        [paramDict setValue:@"saryu_2" forKey:@"image_name"];
+        [paramDict setValue:title_Sarayu_canal_project forKey:@"title"];
+        ImageItemModel *item2 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item2];
+        
+        [paramDict setValue:@"saryu_3" forKey:@"image_name"];
+        [paramDict setValue:title_Sarayu_canal_project forKey:@"title"];
+        ImageItemModel *item3 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item3];
+        
+        [paramDict setValue:@"saryu_4" forKey:@"image_name"];
+        [paramDict setValue:title_Sarayu_canal_project forKey:@"title"];
+        ImageItemModel *item4 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item4];
+        
+        [paramDict setValue:@"saryu_5" forKey:@"image_name"];
+        [paramDict setValue:title_Sarayu_canal_project forKey:@"title"];
+        ImageItemModel *item5 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item5];
+        
+        [paramDict setValue:@"saryu_6" forKey:@"image_name"];
+        [paramDict setValue:title_Sarayu_canal_project forKey:@"title"];
+        ImageItemModel *item6 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item6];
+        
+    }
+    else if ([self.projTitle isEqualToString:title_Bansagar_canal_project])
+    {
+        NSMutableDictionary *paramDict = [[NSMutableDictionary alloc] init];
+        [paramDict setValue:@"badsagar_1" forKey:@"image_name"];
+        [paramDict setValue:title_Bansagar_canal_project forKey:@"title"];
+        ImageItemModel *item1 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item1];
+        
+        [paramDict setValue:@"badsagar_2" forKey:@"image_name"];
+        [paramDict setValue:title_Bansagar_canal_project forKey:@"title"];
+        ImageItemModel *item2 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item2];
+        
+        [paramDict setValue:@"badsagar_3" forKey:@"image_name"];
+        [paramDict setValue:title_Bansagar_canal_project forKey:@"title"];
+        ImageItemModel *item3 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item3];
+        
+        [paramDict setValue:@"badsagar_4" forKey:@"image_name"];
+        [paramDict setValue:title_Bansagar_canal_project forKey:@"title"];
+        ImageItemModel *item4 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item4];
+        
+        [paramDict setValue:@"badsagar_5" forKey:@"image_name"];
+        [paramDict setValue:title_Bansagar_canal_project forKey:@"title"];
+        ImageItemModel *item5 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item5];
+        
+        [paramDict setValue:@"badsagar_6" forKey:@"image_name"];
+        [paramDict setValue:title_Bansagar_canal_project forKey:@"title"];
+        ImageItemModel *item6 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item6];
+    }
+    else if ([self.projTitle isEqualToString:title_Bundelkhand_Irrigation_project])
+    {
+        NSMutableDictionary *paramDict = [[NSMutableDictionary alloc] init];
+        [paramDict setValue:@"bundelkhand_1" forKey:@"image_name"];
+        [paramDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+        ImageItemModel *item1 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item1];
+        
+        [paramDict setValue:@"bundelkhand_2" forKey:@"image_name"];
+        [paramDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+        ImageItemModel *item2 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item2];
+        
+        [paramDict setValue:@"bundelkhand_3" forKey:@"image_name"];
+        [paramDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+        ImageItemModel *item3 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item3];
+        
+        [paramDict setValue:@"bundelkhand_4" forKey:@"image_name"];
+        [paramDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+        ImageItemModel *item4 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item4];
+        
+        [paramDict setValue:@"bundelkhand_5" forKey:@"image_name"];
+        [paramDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+        ImageItemModel *item5 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item5];
+        
+        [paramDict setValue:@"bundelkhand_6" forKey:@"image_name"];
+        [paramDict setValue:title_Bundelkhand_Irrigation_project forKey:@"title"];
+        ImageItemModel *item6 = [[ImageItemModel alloc]initWithDict:paramDict];
+        [self.imageDataArray addObject:item6];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -165,39 +267,46 @@ static NSString *CellIdentifier = @"Bio_Cell";
 #pragma mark - UIcollectioView
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 8;
-//    return [self.imageDataArray count];
+//    return 8;
+    return [self.imageDataArray count];
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    EventsDatamodel *event = [self.imageDataArray objectAtIndex:indexPath.item];
+    ImageItemModel *imageModel = [self.imageDataArray objectAtIndex:indexPath.item];
     UICollectionViewCell *cell = [self.maincollectionView dequeueReusableCellWithReuseIdentifier:TILE_IDENTIFIER forIndexPath:indexPath];
     [cell setBackgroundColor:[UIColor blackColor]];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
     
     [cell.contentView addSubview:imageView];
+  
     [imageView setImage:[UIImage imageNamed:@"partylogo"]];
     
-//    [imageView setImageWithURL:[NSURL URLWithString:event.image]
-//              placeholderImage:[UIImage imageNamed:@"partylogo"]];
-    
+    if(imageModel.image_name.length > 2)
+    {
+        [imageView setImage:[UIImage imageNamed:imageModel.image_name]];
+        
+    }
+    else{
+        [imageView setImageWithURL:[NSURL URLWithString:imageModel.image]
+                    placeholderImage:[UIImage imageNamed:@"partylogo"]];
+    }
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-//    EventsDatamodel *event = [self.imageDataArray objectAtIndex:indexPath.item];
-//    if(event && [event.image length] >0)
-//    {
-//        ImageDetailsViewController *imgDetailsVC = [[ImageDetailsViewController alloc]init];
-//        imgDetailsVC.imageURLString =event.image;
-//        imgDetailsVC.imageDataArray = [self.imageDataArray mutableCopy];
-//        imgDetailsVC.selectedIndex = (int)indexPath.item;
-//        [self.navigationController pushViewController:imgDetailsVC animated:YES];
-//    }
+    ImageItemModel *imageModel = [self.imageDataArray objectAtIndex:indexPath.item];
+    if(imageModel && ([imageModel.image length] > 0 || [imageModel.image_name length] > 2))
+    {
+        ImageDetailsViewController *imgDetailsVC = [[ImageDetailsViewController alloc]init];
+        imgDetailsVC.imageURLString =imageModel.image;
+        imgDetailsVC.imageDataArray = [self.imageDataArray mutableCopy];
+        imgDetailsVC.selectedIndex = (int)indexPath.item;
+        [self.navigationController pushViewController:imgDetailsVC animated:YES];
+    }
 }
 
 
